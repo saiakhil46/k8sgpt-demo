@@ -1,0 +1,17 @@
+apiVersion: core.k8sgpt.ai/v1alpha1
+kind: K8sGPT
+metadata:
+  name: k8sgpt-sample
+  namespace: k8sgpt-operator-system
+spec:
+  ai:
+    enabled: true
+    model: gemini-2.0-flash
+    backend: google
+    secret:
+      name: k8sgpt-sample-secret
+      key: google-api-key
+    # anonymized: false
+    # language: english
+  noCache: false
+  version: v0.4.1

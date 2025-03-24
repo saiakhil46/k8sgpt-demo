@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpu-limited-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cpu-limited-app
+  template:
+    metadata:
+      labels:
+        app: cpu-limited-app
+    spec:
+      containers:
+      - name: cpu-limited-container
+        image: busybox
+        command: ["/bin/sh", "-c", "echo cpu issue"]
+        resources:
+          limits:
+            cpu: "10000"
