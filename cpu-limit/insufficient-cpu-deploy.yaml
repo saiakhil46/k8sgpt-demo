@@ -14,8 +14,7 @@ spec:
     spec:
       containers:
       - name: cpu-limited-container
-        image: busybox
-        command: ["/bin/sh", "-c", "echo cpu issue"]
+        image: nginx
         resources:
           limits:
             cpu: "10000"
